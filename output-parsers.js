@@ -13,14 +13,14 @@ const callerParser = async () => {
     const parser = new StringOutputParser
 
     const prompt = ChatPromptTemplate.fromMessages([
-        ["system", "Generate a clean code with"],
+        ["system", "Extract information from"],
         ['human', "{input}"]
     ])
 
     const chain = prompt.pipe(llm).pipe(parser)
 
     return await chain.invoke({
-        input: "Next js FSD"
+        input: "Emanuel macron"
     })
 }
 
